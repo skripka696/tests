@@ -1,0 +1,21 @@
+{% extends 'tests/base.html' %}
+
+{% block title %}Django !{% endblock %}
+{% block content %}
+<form action="/tests/answer/" method="post">{%csrf_token%}
+
+
+
+
+    {% for key,value in answer.iteritems %}
+    {{ key }} <br>
+        {% for val in value %}
+            <input type="radio" value="{{ val.pk}}" name="{{ key }}">{{ val.answer }}<br>
+        {% endfor %}
+    <br>
+    {% endfor %}
+    <button type="submit">Send</button>
+</form>
+
+{% endblock %}
+

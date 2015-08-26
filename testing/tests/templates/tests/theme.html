@@ -1,0 +1,14 @@
+{% extends 'tests/base.html' %}
+<style>
+
+</style>
+{% block title %}Django !{% endblock %}
+{% block content %}
+    <table class="table"><tr>
+    {% for theme in theme %}
+
+      <td><a href = "{%url 'tests' pk=theme.pk%}">{{theme}}<td></td>
+    {% endfor %}
+    </tr></table>
+{% endblock %}
+
