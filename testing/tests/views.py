@@ -69,12 +69,6 @@ def foo(request):
     print request.POST
     for key, value in request.POST.items():
         print key, value
-        # if key.startswith('question'):
-        #     answer = Answer.objects.get(id=value[0])
-        #     print '2222'
-        #     print Answer.objects.select_related('question__name').get(id=value[0])
-        #     if answer.status == 'F':
-        #         return HttpResponse('FALSE')
-        #     return HttpResponse('TRUE')
+
 
     return HttpResponse('ok')
