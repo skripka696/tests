@@ -19,12 +19,7 @@ class Question(models.Model):
 class Answer(models.Model):
     question = models.ForeignKey(Question)
     answer = models.CharField(max_length=255)
-
-    GENDER_CHOICES =(
-        ('T', 'True'),
-        ('F', 'False'),
-    )
-    status = models.CharField(max_length=50, choices=GENDER_CHOICES, default='F')
+    status = models.BooleanField()
 
     def __unicode__(self):
         return '{0} {1}'.format(self.answer, self.status)

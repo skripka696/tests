@@ -68,7 +68,6 @@ class TestsView(DetailView):
 def foo(request):
     print request.POST
     for key, value in request.POST.items():
-
         print key, value
         # if key.startswith('question'):
         #     answer = Answer.objects.get(id=value[0])
@@ -78,4 +77,4 @@ def foo(request):
         #         return HttpResponse('FALSE')
         #     return HttpResponse('TRUE')
 
-        return HttpResponse(key, value)
+    return HttpResponse('ok')
